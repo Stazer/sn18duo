@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
+</head>
+<body>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- As a heading -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="team.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            todo
+        </a>
+    </nav>
+    <div class="container pt-4">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Beispielseite">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" placeholder="Beispielseite mit dem Bootstrap Framework anlegen">
+            </div>
+            <div class="form-group">
+                <label for="deadline">Deadline</label>
+                <input type="text" class="form-control" id="deadline" placeholder="26. April 2018">
+            </div>
+            <div class="form-group">
+                <label for="progress">Progress</label>
+                <input type="text" class="form-control" id="progress" placeholder="25%">
+            </div>
+            <button type="submit" class="btn btn-success"><i class="far fa-check-circle" style="margin-right: 4px;"></i>Save</button>
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt" style="margin-right: 4px;"></i>Delete</button>
+        </form>
+    </div>
+</body>
+</html>
