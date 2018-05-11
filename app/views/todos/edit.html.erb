@@ -23,8 +23,10 @@
                 <%= f.label :progress, 'Progress' %>
                 <%= f.text_field :progress, placeholder: 'todo\'s progress', class: 'form-control' %>
             </div>
-            <%= f.submit class: 'btn btn-success' %>
-            <%= link_to 'Delete Todo', todo_path(@todo), class: 'btn btn-danger', method: :delete %>
+            <button type="submit" class="btn btn-success"><i class="far fa-check-circle" style="margin-right: 4px;"></i>Save</button>
+            <%= link_to todo_path(@todo), class: 'btn btn-danger', method: :delete do %>
+                <i class="fas fa-trash-alt" style="margin-right: 4px;"></i>Delete
+            <% end %>
         </form>
         <% end %>
     </div>
