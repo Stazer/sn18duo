@@ -1,22 +1,34 @@
-class TodosContoller < ApplicationController
-
+class TodosController < ApplicationController
     def new
-    end
-    
-    def create
+      @todo = Todo.new
     end
 
-    def index
-        @todos = Todo.all
+    def create
+      Todo.create params.require(:todo).permit :name, :description, :deadline, :progress
+
+      self.index
+      render 'index'
+    end
+
+    def index
+      @todos = Todo.all
     end
 
     def edit
-    end
-    
-    def update
-    end
-    
-    def destroy
+      @todo = Todo.find params[:id]
     end
 
+    def update
+      Todo.update params[:id], params.require(:todo).permit(:name, :description, :deadline, :progress)
+
+      self.index
+      render 'index'
+    end
+
+    def destroy
+      Todo.destroy params[:id]
+
+      self.index
+      render 'index'
+    end
 end

@@ -1,1 +1,34 @@
-Test
+<div class="row pt-4">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <div class="d-flex">
+            <div class="mr-auto p-2"><h3>All todos</h3></div>
+            <div class="p-2"><a href="<%= new_todo_path %>" class="btn btn-outline-primary">Add</a></div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Deadline</th>
+                    <th scope="col">Progress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @todos.each do |i|%>
+                    <tr class="tr-clickable" data-href="<%= edit_todo_path(i) %>">
+                        <td><%= i.name %></td>
+                        <td><%= i.description %></td>
+                        <td><%= i.deadline %></td>
+                        <td class="w-25">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="<%= i.progress %>" aria-valuemin="0" aria-valuemax="100"><%= i.progress %>%</div>
+                            </div>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-1"></div>
+</div>

@@ -1,0 +1,32 @@
+<div class="row pt-4">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <div class="d-flex">
+            <div class="mr-auto p-2"><h3>Edit todo</h3></div>
+            <div class="p-2"><a href="<%= todos_path %>" class="btn btn-outline-secondary">Back</a></div>
+        </div>
+        <%= form_for @todo do |f|%>
+        <form>
+            <div class="form-group">
+                <%= f.label :name, 'Name' %>
+                <%= f.text_field :name, placeholder: 'todo\'s name', class: 'form-control' %>
+            </div>
+            <div class="form-group">
+                <%= f.label :description, 'Description' %>
+                <%= f.text_field :description, placeholder: 'todo\'s description', class: 'form-control' %>
+            </div>
+            <div class="form-group">
+                <%= f.label :deadline, 'Deadline' %>
+                <%= f.text_field :deadline, placeholder: 'todo\'s deadline', class: 'form-control' %>
+            </div>
+            <div class="form-group">
+                <%= f.label :progress, 'Progress' %>
+                <%= f.text_field :progress, placeholder: 'todo\'s progress', class: 'form-control' %>
+            </div>
+            <%= f.submit class: 'btn btn-success' %>
+            <%= link_to 'Delete Todo', todo_path(@todo), class: 'btn btn-danger', method: :delete %>
+        </form>
+        <% end %>
+    </div>
+    <div class="col-1"></div>
+</div>
